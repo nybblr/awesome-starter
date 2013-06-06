@@ -12,4 +12,23 @@
 #
 #= require jquery
 #= require jquery_ujs
-#= require_tree .
+#
+#= require foundation
+#= require underscore
+#
+#= require ./lib/es5-shim
+#= require ./lib/batman
+#= require ./lib/batman.jquery
+#= require ./lib/batman.rails
+#
+#= require ./lib/robin
+#= require ./lib/reactor
+#
+#= require ./batman/app
+#
+#= require_tree ./batman/models
+#= require_tree ./batman/views
+#= require_tree ./batman/controllers
+#= require_tree ./batman/helpers
+#
+#= require_self
