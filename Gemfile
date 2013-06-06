@@ -29,6 +29,31 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Renderers
+gem 'haml' # because ERB is ugly
+gem 'haml-rails', :group => :development
+
+# Development
+gem 'quiet_assets' # focus on the important stuff in logs
+gem 'pry-rails' # give me a REPL that's worth my time
+
+# AJAX
+gem 'underscore-rails' # JS helpers like Ruby
+gem 'haml_assets' # HTML in the pipeline
+
+# Prettiness
+gem 'normalize-rails' # make all browsers the same
+gem 'zurb-foundation' # super pretty boilerplate
+gem 'bourbon' # awesome SASS helpers
+
+# Daemons
+gem 'foreman' # declare daemon deps
+
+# Realtime
+gem 'rails-observers' # cheezy callbacks like Rails 3
+gem 'thin' # long requests requires thin
+gem 'faye' # websockets with fallbacks
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

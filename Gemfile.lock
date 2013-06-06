@@ -25,9 +25,14 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    addressable (2.3.4)
     arel (4.0.0)
     atomic (1.1.9)
+    bourbon (3.1.6)
+      sass (>= 3.2.0)
+      thor
     builder (3.1.4)
+    coderay (1.0.9)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -35,10 +40,46 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    cookiejar (0.3.0)
+    daemons (1.1.9)
+    dotenv (0.7.0)
+    em-http-request (1.0.3)
+      addressable (>= 2.2.3)
+      cookiejar
+      em-socksify
+      eventmachine (>= 1.0.0.beta.4)
+      http_parser.rb (>= 0.5.3)
+    em-socksify (0.2.1)
+      eventmachine (>= 1.0.0.beta.4)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    faye (0.8.9)
+      cookiejar (>= 0.3.0)
+      em-http-request (>= 0.3.0)
+      eventmachine (>= 0.12.0)
+      faye-websocket (>= 0.4.0)
+      rack (>= 1.0.0)
+      yajl-ruby (>= 1.0.0)
+    faye-websocket (0.6.1)
+      eventmachine (>= 0.12.0)
+      websocket-driver (>= 0.2.0)
+    foreman (0.63.0)
+      dotenv (>= 0.7)
+      thor (>= 0.13.6)
+    haml (4.0.3)
+      tilt
+    haml-rails (0.4)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (>= 3.1, < 4.1)
+      railties (>= 3.1, < 4.1)
+    haml_assets (0.2.1)
+      haml
+      tilt
     hike (1.2.3)
+    http_parser.rb (0.5.3)
     i18n (0.6.4)
     jbuilder (1.0.2)
       activesupport (>= 3.0.0)
@@ -49,10 +90,20 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8.1)
     mime-types (1.23)
     minitest (4.7.4)
     multi_json (1.7.6)
+    normalize-rails (2.1.1)
     polyglot (0.3.3)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    pry-rails (0.3.0)
+      pry (>= 0.9.10)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -64,6 +115,8 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.0.0.rc1)
       sprockets-rails (~> 2.0.0.rc4)
+    rails-observers (0.1.1)
+      railties (~> 4.0.0.beta)
     railties (4.0.0.rc1)
       actionpack (= 4.0.0.rc1)
       activesupport (= 4.0.0.rc1)
@@ -81,6 +134,7 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    slop (3.4.5)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -91,6 +145,10 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     sqlite3 (1.3.7)
+    thin (1.5.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     thor (0.18.1)
     thread_safe (0.1.0)
       atomic
@@ -102,16 +160,34 @@ GEM
     uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    underscore-rails (1.4.4)
+    websocket-driver (0.2.0)
+    yajl-ruby (1.1.0)
+    zurb-foundation (4.2.1)
+      sass (>= 3.2.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bourbon
   coffee-rails (~> 4.0.0)
+  faye
+  foreman
+  haml
+  haml-rails
+  haml_assets
   jbuilder (~> 1.0.1)
   jquery-rails
+  normalize-rails
+  pry-rails
+  quiet_assets
   rails (= 4.0.0.rc1)
+  rails-observers
   sass-rails (~> 4.0.0.rc1)
   sdoc
   sqlite3
+  thin
   uglifier (>= 1.3.0)
+  underscore-rails
+  zurb-foundation
