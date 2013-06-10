@@ -25,6 +25,7 @@
 #= require rangy-serializer
 #= require rangy-textrange
 #
+#= require ./lib/jquery.autosize
 #= require ./lib/hallo
 #
 #= require ./lib/es5-shim
