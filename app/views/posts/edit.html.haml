@@ -1,7 +1,7 @@
 %h1 Editing post
 
-= render 'form'
+%form{data: {"formfor-post" => "post", "event-submit" => "controllers.posts.update", "partial" => "posts/_form"}}
 
-= link_to 'Show', @post
+%a{data: {route: "routes.posts[post]"}} Show
 \|
-= link_to 'Back', posts_path
+%a{data: {route: "routes.posts"}} Back

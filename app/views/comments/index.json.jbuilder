@@ -1,4 +1,4 @@
 json.array!(@comments) do |comment|
-  json.extract! comment, :post_id, :author, :body
+  json.extract! comment, *comment.attribute_names
   json.url comment_url(comment, format: :json)
 end

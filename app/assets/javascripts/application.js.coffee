@@ -44,3 +44,6 @@
 #= require_tree ./batman/helpers
 #
 #= require_self
+
+$ ->
+  Awesome.run()

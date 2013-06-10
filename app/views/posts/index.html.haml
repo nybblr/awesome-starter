@@ -1,7 +1,7 @@
 %h1 Listing posts
 
 %table
-  %tr
+  %thead
     %th Title
     %th Body
     %th Tags
@@ -11,17 +11,20 @@
     %th
     %th
 
-  - @posts.each do |post|
-    %tr
-      %td= post.title
-      %td= post.body
-      %td= post.tags
-      %td= post.published
-      %td= post.published_on
-      %td= link_to 'Show', post
-      %td= link_to 'Edit', edit_post_path(post)
-      %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  %tbody
+    %tr{data: {"foreach-post" => "posts"}}
+      %td{data: {bind: "post.title"}}
+      %td{data: {bind: "post.body"}}
+      %td{data: {bind: "post.tags"}}
+      %td{data: {bind: "post.published"}}
+      %td{data: {bind: "post.published_on"}}
+      %td
+        %a{data: {route: "routes.posts[post]"}} Show
+      %td
+        %a{data: {route: "routes.posts[post].edit"}} Edit
+      %td
+        %a{data: {"event-click" => "destroy"}} Destroy
 
 %br
 
-= link_to 'New Post', new_post_path
+%a{data: {route: "routes.posts.new"}} New post

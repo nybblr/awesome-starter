@@ -1,21 +1,23 @@
-%p#notice= notice
+.row
+  .large-9.columns
+    %h1{data: {bind: 'post.title'}}
+    %h4
+      Published on
+      %em{data: {bind: 'post.published_on'}}
+    .large-6.columns
+      .row
+        %textarea{data: {bind: 'post.body'}}
 
-%p
-  %b Title:
-  = @post.title
-%p
-  %b Body:
-  = @post.body
-%p
-  %b Tags:
-  = @post.tags
-%p
-  %b Published:
-  = @post.published
-%p
-  %b Published on:
-  = @post.published_on
+        %p
+          %em{data: {bind: 'post.tags'}}
+    .large-6.columns
+      .row
+        -# %p{contenteditable: true, data: {bind: 'post.body'}}
+        %p{data: {view: 'EditableView', 'view-keypath' => 'post.body', 'view-record' => 'post'}}
 
-= link_to 'Edit', edit_post_path(@post)
-\|
-= link_to 'Back', posts_path
+    %a{data: {route: 'routes.posts[post].edit'}} Edit
+    %a{data: {route: 'routes.posts'}} Back
+
+  .large-3.columns
+    .comment{data: {"foreach-comment" => "post.comments", partial: "comments/_comment"}}
+    %form{data: {"formfor-comment" => "controllers.comments.comment", "event-submit" => "controllers.comments.create", partial: "comments/_form"}}

@@ -1,25 +1,13 @@
-= form_for @post do |f|
-  - if @post.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
-      %ul
-        - @post.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :body
-    = f.text_area :body
-  .field
-    = f.label :tags
-    = f.text_field :tags
-  .field
-    = f.label :published
-    = f.check_box :published
-  .field
-    = f.label :published_on
-    = f.datetime_select :published_on
-  .actions
-    = f.submit 'Save'
+.field
+  %input.string{type: "text", placeholder: "Post title", data: {bind: "post.title"}}
+.field
+  %textarea.text{placeholder: "Post body", data: {bind: "post.body"}}
+.field
+  %input.string{type: "text", placeholder: "Post tags", data: {bind: "post.tags"}}
+.field
+  %label Published?
+  %input.boolean{type: "checkbox", placeholder: "Published?", data: {bind: "post.published"}}
+.field
+  %input.datetime{type: "date", placeholder: "Published on", data: {bind: "post.published_on"}}
+.actions
+  %input.button{type: "submit", value: "Save"}
