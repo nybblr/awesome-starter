@@ -1,10 +1,15 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_post,    only: [:show, :new, :create, :edit, :update, :destroy, :index]
 
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    if @post
+      @comments = @post.comments
+    else
+      @comments = Comment.all
+    end
   end
 
   # GET /comments/1
@@ -14,7 +19,11 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = Comment.new
+    if @post
+      @comment = @post.comments.build
+    else
+      @comment = Comment.new
+    end
   end
 
   # GET /comments/1/edit
@@ -24,7 +33,11 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
+    if @post
+      @comment = @post.comments.build(comment_params)
+    else
+      @comment = Comment.new(comment_params)
+    end
 
     respond_to do |format|
       if @comment.save
@@ -64,7 +77,15 @@ class CommentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
-      @comment = Comment.find(params[:id])
+      if @post
+        @comment = @post.comments.find(params[:id])
+      else
+        @comment = Comment.find(params[:id])
+      end
+    end
+
+    def set_post
+      @post = Post.find(params[:post_id]) if params[:post_id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
