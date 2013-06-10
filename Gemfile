@@ -38,8 +38,13 @@ gem 'quiet_assets' # focus on the important stuff in logs
 gem 'pry-rails' # give me a REPL that's worth my time
 
 # AJAX
-gem 'underscore-rails' # JS helpers like Ruby
 gem 'haml_assets' # HTML in the pipeline
+gem 'underscore-rails' # JS helpers like Ruby
+
+# Hallo.js
+gem 'jquery-ui-rails' # jQuery UI assets
+gem 'rangy-rails' # selection JS lib
+gem 'font-awesome-rails' # awesome icons in pipeline
 
 # Prettiness
 gem 'normalize-rails' # make all browsers the same
