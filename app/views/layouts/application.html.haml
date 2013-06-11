@@ -8,29 +8,28 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %body
-      %article
-        .row
-          .large-3.columns
-            %h1
-              %img{ src: "http://placehold.it/400x100&text=Awesome" }
-          .large-9.columns
-            %ul.inline-list.right
-              %li
-                %a{ href: "/" } Home
-              %li
-                %a{ href: "/posts" } Posts
-              %li
-                %a{ href: "https://github.com/nybblr" } Take over the world
-        .row
-          .large-12.columns
-            %h3
-              Awesome
-              %small Snappy subtitle
-              %div{ data: { yield: "main" } }= yield
-        %footer.row
-          .large-12.columns
-            %hr/
-            .row
-              .large-12.columns
-                %p &copy; Copyright no one at all. Go to town.
+    %article
+      .row
+        .large-3.columns
+          %h1
+            %img{ src: "http://placehold.it/400x100&text=Awesome" }
+        .large-9.columns
+          %ul.inline-list.right
+            %li
+              %a{ href: "/" } Home
+            %li
+              %a{ href: "/posts" } Posts
+            %li
+              %a{ href: "https://github.com/nybblr" } Take over the world
+      .row
+        .large-12.columns
+          %h3
+            Awesome
+            %small Snappy subtitle
+            %div{ data: { yield: "main" } }= yield
+      %footer.row
+        .large-12.columns
+          %hr/
+          .row
+            .large-12.columns
+              %p &copy; Copyright no one at all. Go to town.
